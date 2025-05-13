@@ -12,6 +12,7 @@ cd mapviz-benchmark-demo
 npm install
 npm run build
 npm run dev 
+```
 
 ## WIP github pages demo
 https://mon33k.github.io/mapviz-benchmark-demo/?limit=1000
