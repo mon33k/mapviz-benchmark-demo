@@ -17,9 +17,10 @@ npm run dev
 ## WIP github pages demo
 https://mon33k.github.io/mapviz-benchmark-demo/?limit=1000
 
+
 ### What Works
-- Base Map Loads, 100k node markers, limited link lines
-- Benchmark Table
+- Base Map Loads, 100k node markers, limited link lines, toggle the node count to show the node markers
+- Benchmark Table shows overall performace of app
 - very basic minimal Tailwind css
 
 
