@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import MapLibreGLArea from './MapLibreGLArea';
-import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { useAppSelector } from '../../../app/hooks';
 import { selectNodes } from '../../nodes/nodeSlice';
 import { selectLinks } from '../../links/linkSlice';
 import { selectDevices } from '../../devices/deviceSlice';
