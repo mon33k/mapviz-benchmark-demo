@@ -10,4 +10,5 @@ Clone the repository and install dependencies:
 git clone git@github.com:mon33k/mapviz-benchmark-demo.git
 cd mapviz-benchmark-demo
 npm install
+npm run build
 npm run dev 
