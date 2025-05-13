@@ -1,25 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import MapLibreGLArea from './MapLibreGLArea';
-import { useAppSelector } from '../../../app/hooks';
+import { useAppSelector, useAppDispatch } from '../../../app/hooks';
 import { selectNodes } from '../../nodes/nodeSlice';
 import { selectLinks } from '../../links/linkSlice';
 import { selectDevices } from '../../devices/deviceSlice';
 import { getNodeIconKey, nodeIconMap, loadedIcons } from '../../../common/utils/getNodeIconKey';
+// import { setMapRenderTime } from '../../benchmark/benchmarkSlice';
 
 const MapLibreGLContainer = () => {
     const mapRef = useRef<maplibregl.Map | null>(null);
     const mapContainerRef = useRef<HTMLDivElement>(null);
     const [mapInstance, setMapInstance] = useState<maplibregl.Map | null>(null);
+    const baseUrl = import.meta.env.BASE_URL;
 
     const [nodeLimit, setNodeLimit] = useState(() => {
         const params = new URLSearchParams(window.location.search);
-        return parseInt(params.get('limit') || '1000');
+        return parseInt(baseUrl + params.get('limit') || '1000');
     });
 
     const nodes = useAppSelector(selectNodes);
     const links = useAppSelector(selectLinks);
     const devices = useAppSelector(selectDevices);
+    
+    // const dispatch = useAppDispatch();
+
 
     // Update the URL with the current limit value
     useEffect(() => {
@@ -95,6 +100,7 @@ const MapLibreGLContainer = () => {
             }
 
             try {
+
                 map.loadImage(iconPath).then((result) => {
                     map.addImage(icon, result.data);
                     loadedIcons.add(icon);

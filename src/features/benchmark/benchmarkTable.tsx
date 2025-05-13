@@ -1,5 +1,6 @@
 import { usePerformanceTracker } from './usePerformanceTracker';
 
+// could be useless maybe delete this later
 const getBrowser = () => {
     const ua = navigator.userAgent;
     if (ua.includes('Chrome') && !ua.includes('Edg') && !ua.includes('OPR')) return 'Chrome';
@@ -41,7 +42,7 @@ const BenchmarkTable = () => {
                     <tr>
                         {[
                             'Method', 'Browser', 'FPS', 'Render', 'Latency', 'Memory',
-                            'CPU', 'Drops', 'Delay', 'Score'
+                            'Frame Load', 'Drops', 'Delay', 'Score'
                         ].map((h, i) => (
                             <th key={i} style={{
                                 borderBottom: '1px solid #ddd',

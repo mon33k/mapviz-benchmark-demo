@@ -13,11 +13,11 @@ dist-ssr
 *.local
 
 # data
-data/buildings.json
-data/devices100k.json
-data/installs.json
-data/links100k.json
-data/sectors.json
+src/data/buildings.json
+src/data/devices100k.json
+src/data/installs.json
+src/data/links100k.json
+src/data/sectors.json
 
 # Editor directories and files
 .vscode/*

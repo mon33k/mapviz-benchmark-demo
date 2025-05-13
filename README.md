@@ -12,3 +12,18 @@ cd mapviz-benchmark-demo
 npm install
 npm run build
 npm run dev 
+
+## WIP github pages demo
+https://mon33k.github.io/mapviz-benchmark-demo/?limit=1000
+
+### What Works
+- Base Map Loads, 100k node markers, limited link lines
+- Benchmark Table
+- very basic minimal Tailwind css
+
+
+### What Doesn't Work / Still need to add
+- Need to add link lines for 100k nodes 
+- Benchmark Table reflects events directly related to the Map Layer you're on (adding that currently)
+- Finished tabs for each map technology 
+- optimized marker nodes - its fast but could be faster

@@ -27,7 +27,7 @@ useEffect(() => {
         <Tabs/>
         <main className="flex-1 overflow-hidden">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/mapviz-benchmark-demo/" element={<Home />} />
           </Routes>
         </main>
         {/* <NodeInfo /> */}
