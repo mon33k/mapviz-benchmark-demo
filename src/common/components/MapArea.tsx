@@ -1,5 +1,5 @@
 import { useAppSelector } from '../../app/hooks';
-import MapLibreGLContainer from '../../features/maps/mapLibreGL/MapLibreGLContainer';
+import MapLibreGLContainer from '../../features/baseMaps/mapLibreGL/MapLibreGLContainer';
 
 const MapArea = () => {
     const renderer = useAppSelector((state) => state.ui.renderer);

@@ -11,6 +11,8 @@ export interface MapLink {
     nodeB?: Node;
 }
 
+// return type annotation in TypeScript for a MapLink
+
 export function buildMapLinkData(
     fetchedLinks: Link[],
     devices: Device[],

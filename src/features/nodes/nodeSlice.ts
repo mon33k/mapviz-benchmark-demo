@@ -8,6 +8,7 @@ export const fetchNodes = createAsyncThunk('nodes/fetchNodes', async () => {
     return localData.default;
 });
 
+
 interface NodeState {
     data: Node[];
     status: 'idle' | 'loading' | 'succeeded' | 'failed';

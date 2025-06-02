@@ -1,5 +1,16 @@
 import { Link, Device, Node, CoordRenderLink } from '../../types/models';
 
+/**
+ * This function creates CoordRenderLink objects based on links, devices and nodes passed to the function. 
+ * It uses two maps (deviceMap and nodeMap) that look up devices and nodes based on their IDs.
+ * @param links - An array of Link objects between devices.
+ * @param devices - An array of Device objects, each with detailed info about a device.
+ * @param nodes - An array of Node objects, each node corresponds to a physical location. 
+ * @returns CoordRenderLink[] objects, with lat long coordinates of fromDevice and toDevice.
+ * 
+ */
+
+
 export function buildCoordRenderLinks(
     links: Link[],
     devices: Device[],

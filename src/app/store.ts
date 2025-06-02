@@ -7,7 +7,7 @@ import benchmarkReducer from '../features/benchmark/benchmarkSlice';
 // import installsReducer from './slices/installsSlice';
 // import sectorsReducer from './slices/sectorsSlice';
 
-import mapLibreReducer from '../features/maps/mapLibreGL/mapLibreGLSlice';
+import mapLibreReducer from '../features/baseMaps/mapLibreGL/mapLibreGLSlice';
 import uiReducer from '../features/ui/uiSlice';
 
 

@@ -8,13 +8,24 @@ import { selectNodes } from '../../features/nodes/nodeSlice';
 import { buildCoordRenderLinks } from './buildCoordRenderLinks';
 import { CoordRenderLink } from '../../types/models';
 
+/**
+ * The LinkLinesLayer component fetches links that are associated with Devices and Nodes in the Redux store.
+ * useMemo caches the result of buildCoordRenderLinks on changes to fetchedLinks, devices and nodes. 
+ * the function buildCoordRenderLinks then builds new CoordRenderLink objects from links
+ * @param {object} props - map and nodeLimit 
+ * @param {maplibregl.Map} - props.map
+ * @param {number} props.nodeLimit - Int that is passed to components to limit number of node link pairs displayed on the map
+ * 
+**/
+
+
 interface Props {
-    map: maplibregl.Map;
+    map: maplibregl.Map; // changing this to MapType so that I can change the base map 
     nodeLimit: number;
     // nodes: Node[];
 }
 
-
+//const LinkLinesLayer = <MapType extends maplibregl.Map | any>({map, nodeLimit}: Props<MapType>) => { 
 const LinkLinesLayer = ({ map, nodeLimit }: Props) => {
     const fetchedLinks = useAppSelector(selectLinks);
     const devices = useAppSelector(selectDevices);
@@ -38,7 +49,7 @@ const LinkLinesLayer = ({ map, nodeLimit }: Props) => {
             if (type === 'ethernet' && !filters.ethernet) return false;
             if (wirelessTypes.includes(type) && !filters.wireless) return false;
             return true;
-        }).slice(0, nodeLimit); // Apply nodeLimit to restrict the number of links
+        }).slice(0, nodeLimit); // Applies a nodeLimit to restrict the number of links
 
         const features: Feature<LineString, GeoJsonProperties>[] = filteredLinks.map(link => ({
             type: 'Feature',
